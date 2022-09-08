@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { inject, observer } from "mobx-react";
+import React from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
+import LoaderComponent from "./components/LoaderComponent/LoaderComponent";
+import ResultComponent from "./components/ResultComponent/ResultComponent";
+import SearchBar from "./components/SearchBar/SearchBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface IApp {
+  store?: any;
 }
+
+const App = inject("store")(
+  observer(({ store }: IApp) => {
+    let { result } = store;
+    return (
+      <div className="App">
+        <Header header="weather app" />
+        <SearchBar />
+        <LoaderComponent />
+        {result.length !== 0 && <ResultComponent />}
+      </div>
+    );
+  })
+);
 
 export default App;

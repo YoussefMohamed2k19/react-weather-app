@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check Card Component Checks if a card with icon and data loads or not 1`] = `
+<div>
+  <div
+    class="itemCard"
+  >
+    <i
+      class="fs-2 bi bi-droplet"
+    />
+    <span
+      class="fs-6 fw-bold"
+    >
+      15.88
+       
+      ° C
+    </span>
+    <span
+      class="fw-lighter text-secondary"
+    >
+      temperature
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Check Card Component Checks if a card with image and data loads or not 1`] = `
+<div>
+  <div
+    class="itemCard"
+  >
+    <img
+      alt=""
+      src="http://openweathermap.org/img/wn/04d@2x.png"
+    />
+    <span
+      class="fs-6 fw-bold"
+    >
+      15.88
+       
+      ° C
+    </span>
+    <span
+      class="fw-lighter text-secondary"
+    >
+      temperature
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Check Card Component Checks if a card with local time and icon loads or not 1`] = `
+<div>
+  <div
+    class="itemCard"
+  >
+    <i
+      class="fs-2 bi bi-sunrise"
+    />
+    <span
+      class="fs-6 fw-bold"
+    >
+      6 : 04 AM
+       
+    </span>
+    <span
+      class="fw-lighter text-secondary"
+    >
+      Sun Rise
+    </span>
+  </div>
+</div>
+`;

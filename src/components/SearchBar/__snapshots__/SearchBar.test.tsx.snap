@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchBar Component 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "isMobxInjector": true,
+  "render": [Function],
+  "wrappedComponent": Object {
+    "$$typeof": Symbol(react.memo),
+    "compare": null,
+    "type": [Function],
+  },
+}
+`;

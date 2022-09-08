@@ -1,0 +1,22 @@
+.itemCard {
+  border: 2px solid #dadada;
+  border-radius: 4px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemCard:nth-child(1) img {
+  width: 65px;
+  /* border: 2px solid red; */
+  margin-top: -12px;
+}
+
+.itemCard:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

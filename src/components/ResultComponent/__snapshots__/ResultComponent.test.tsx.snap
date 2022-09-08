@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the ResultComponent 1`] = `
+<div>
+  <div
+    class="cardParent"
+  >
+    <div
+      class="itemCard"
+    >
+      <img
+        alt=""
+        src="http://openweathermap.org/img/wn/04d@2x.png"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        10
+         
+        ° C
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Temperature
+      </span>
+    </div>
+    <div
+      class="itemCard"
+    >
+      <i
+        class="fs-2 bi bi-wind"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        7.8
+         
+        km/h
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Wind
+      </span>
+    </div>
+    <div
+      class="itemCard"
+    >
+      <i
+        class="fs-2 bi bi-droplet"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        78
+         
+        %
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Humidity
+      </span>
+    </div>
+    <div
+      class="itemCard"
+    >
+      <i
+        class="fs-2 bi bi-water"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        1008
+         
+        hPa
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Pressure
+      </span>
+    </div>
+    <div
+      class="itemCard"
+    >
+      <i
+        class="fs-2 bi bi-sunrise"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        6 : 04 AM
+         
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Sun Rise
+      </span>
+    </div>
+    <div
+      class="itemCard"
+    >
+      <i
+        class="fs-2 bi bi-sunset"
+      />
+      <span
+        class="fs-6 fw-bold"
+      >
+        6 : 04 AM
+         
+      </span>
+      <span
+        class="fw-lighter text-secondary"
+      >
+        Sun Set
+      </span>
+    </div>
+  </div>
+</div>
+`;
