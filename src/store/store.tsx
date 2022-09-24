@@ -7,13 +7,17 @@ export class Store {
 
     reaction(
       () => this.cityName,
-      (x) => {
-        fetchData(x, this.setResult, this.setStatus, this.setIsLoading);
+      async (x) => {
+        this.setResult([]);
+        let results = await fetchData(x);
+        if (results !== undefined) {
+          this.setResult(results);
+        }
       }
     );
   }
   @observable cityName: string = "";
-  @observable result: object[] = [];
+  @observable result: [] = [];
   @observable isLoading: boolean = false;
   @observable status: boolean = true;
 
@@ -21,7 +25,7 @@ export class Store {
   changeCityName = (data: string) => (this.cityName = data);
 
   @action
-  setResult = (data: object[]) => (this.result = data);
+  setResult = (data: []) => (this.result = data);
 
   @action
   setIsLoading = (data: boolean) => (this.isLoading = data);

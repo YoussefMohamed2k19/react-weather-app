@@ -8,7 +8,7 @@ interface ILoaderComponent {
 const LoaderComponent = inject("store")(
   observer(({ store }: ILoaderComponent) => {
     const { isLoading, status, cityName, result } = store;
-    const { name, sys } = result;
+    const { name, sys } = result || [];
 
     // console.log(JSON.parse(JSON.stringify(result)));
     return (
