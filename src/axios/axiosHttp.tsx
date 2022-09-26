@@ -1,5 +1,5 @@
 import axios from "axios";
-import { store } from "../store/store";
+import { store } from "../store";
 
 export const axiosInstance = axios.create({
   baseURL: "https://api.openweathermap.org/data/2.5/weather",
@@ -11,7 +11,8 @@ export const axiosInstance = axios.create({
 // axios interceptors can be used to apply the isLoading & status logic
 
 axiosInstance.interceptors.request.use((request) => {
-  let { setIsLoading, setStatus } = store;
+  let { loaderState } = store;
+  let { setIsLoading, setStatus } = loaderState;
   setStatus(true);
   setIsLoading(true);
   return request;
@@ -19,13 +20,15 @@ axiosInstance.interceptors.request.use((request) => {
 
 axiosInstance.interceptors.response.use(
   (response) => {
-    let { setIsLoading, setStatus } = store;
+    let { loaderState } = store;
+    let { setIsLoading, setStatus } = loaderState;
     setIsLoading(false);
     setStatus(true);
     return response;
   },
   (error) => {
-    let { setIsLoading, setStatus } = store;
+    let { loaderState } = store;
+    let { setIsLoading, setStatus } = loaderState;
     setIsLoading(false);
     setStatus(false);
   }

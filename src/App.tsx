@@ -1,17 +1,23 @@
 import { inject, observer } from "mobx-react";
-import "./App.css";
 import Header from "./components/Header/Header";
 import LoaderComponent from "./components/LoaderComponent/LoaderComponent";
 import ResultComponent from "./components/ResultComponent/ResultComponent";
 import SearchBar from "./components/SearchBar/SearchBar";
 
+interface Store {
+  dataState: {
+    result: any;
+  };
+}
+
 interface IApp {
-  store?: any;
+  store?: Store;
 }
 
 const App = inject("store")(
   observer(({ store }: IApp) => {
-    let { result } = store;
+    let { dataState } = store!;
+    let { result } = dataState;
     return (
       <div className="App">
         <Header header="weather app" />

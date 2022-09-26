@@ -1,16 +1,27 @@
-import React from "react";
 import { inject, observer } from "mobx-react";
 
+interface Store {
+  loaderState: {
+    isLoading: boolean;
+    status: boolean;
+  };
+  dataState: {
+    cityName: string;
+    result: any;
+  };
+}
+
 interface ILoaderComponent {
-  store?: any;
+  store?: Store;
 }
 
 const LoaderComponent = inject("store")(
   observer(({ store }: ILoaderComponent) => {
-    const { isLoading, status, cityName, result } = store;
-    const { name, sys } = result || [];
+    let { loaderState, dataState } = store!;
+    let { isLoading, status } = loaderState;
+    let { cityName, result } = dataState;
+    const { name, sys } = result;
 
-    // console.log(JSON.parse(JSON.stringify(result)));
     return (
       <h5 className="text-center text-capitalize">
         {/* make a flow chart here later on */}

@@ -1,10 +1,19 @@
-import { observable, makeAutoObservable, action, reaction } from "mobx";
-import { fetchData } from "../Functions/fetchData";
+import {
+  configure,
+  action,
+  observable,
+  makeAutoObservable,
+  reaction,
+} from "mobx";
+import { fetchData } from "../../Functions/fetchData";
 
-export class Store {
+configure({
+  enforceActions: "always",
+});
+
+export class DataState {
   constructor() {
     makeAutoObservable(this);
-
     reaction(
       () => this.cityName,
       async (x) => {
@@ -17,21 +26,11 @@ export class Store {
     );
   }
   @observable cityName: string = "";
-  @observable result: [] = [];
-  @observable isLoading: boolean = false;
-  @observable status: boolean = true;
+  @observable result: any = [];
 
   @action
   changeCityName = (data: string) => (this.cityName = data);
 
   @action
   setResult = (data: []) => (this.result = data);
-
-  @action
-  setIsLoading = (data: boolean) => (this.isLoading = data);
-
-  @action
-  setStatus = (data: boolean) => (this.status = data);
 }
-
-export const store = new Store();

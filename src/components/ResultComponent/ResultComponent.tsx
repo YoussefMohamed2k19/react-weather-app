@@ -3,13 +3,20 @@ import Cards from "../Cards/Cards";
 import styles from "./ResultComponent.module.scss";
 import TimeZone from "../TimeZone/TimeZone";
 
+interface Store {
+  dataState: {
+    result: any;
+  };
+}
+
 interface IResultComponent {
-  store?: any;
+  store?: Store;
 }
 
 const ResultComponent = inject("store")(
   observer(({ store }: IResultComponent) => {
-    const { result } = store;
+    const { dataState } = store!;
+    const { result } = dataState;
     const { main, sys, timezone, wind, weather } = result;
     return (
       <div className={styles.cardParent}>

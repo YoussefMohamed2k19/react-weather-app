@@ -11,3 +11,7 @@ REACT_APP_WEATHER_APP_PASSWORD = b3528849799fc69ab2e46bdd46794f25
 ## resources
 
 - [good guide on mobx](https://www.educative.io/answers/how-does-mobx-work)
+
+## improvement plans
+
+- write unit tests for the mobx store

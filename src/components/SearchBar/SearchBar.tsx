@@ -1,19 +1,26 @@
 import { inject, observer } from "mobx-react";
 import { useRef } from "react";
 
+interface Store {
+  dataState: {
+    changeCityName: Function;
+  };
+}
+
 interface ISearchBar {
-  store?: any;
+  store?: Store;
 }
 
 const SearchBar = inject("store")(
   observer(({ store }: ISearchBar) => {
-    const { changeCityName } = store;
+    const { dataState } = store!;
+    let { changeCityName } = dataState;
     const inputField = useRef<HTMLInputElement | null>(null);
     return (
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          changeCityName(inputField.current?.value);
+          changeCityName(inputField.current?.value!);
         }}
       >
         <input
