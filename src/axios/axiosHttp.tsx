@@ -4,7 +4,7 @@ import { store } from "../store";
 export const axiosInstance = axios.create({
   baseURL: "https://api.openweathermap.org/data/2.5/weather",
   params: {
-    appid: process.env.REACT_APP_WEATHER_APP_PASSWORD,
+    appid: 'b3528849799fc69ab2e46bdd46794f25',
   },
 });
 
