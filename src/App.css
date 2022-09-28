@@ -3,7 +3,12 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+#root{
+  width: 650px;
+  height: 600px;
+  border: 2px solid #212529;
+  border-radius: 8px;
+}
 body {
   display: grid;
   place-content: center;
@@ -11,9 +16,8 @@ body {
 }
 
 .App {
+  margin: 0 auto;
   width: 350px;
   height: 600px;
-  border: 2px solid #212529;
-  border-radius: 8px;
   padding: 15px;
 }
